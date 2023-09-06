@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-type TextAlign = 'left' | 'center' | 'right';
+type TextAlign = "left" | "center" | "right";
 
 export interface TableProps {
   style: object;
@@ -13,11 +13,11 @@ export interface TableProps {
   align: TextAlign;
   fixHead: boolean;
   onScroll: (event: React.MouseEvent) => void; // 函数回调
-}
+};
 
 export interface ColumnProps {
   stripe: boolean;
   idx: number;
   item: any;
   style: object;
-}
+};

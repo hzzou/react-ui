@@ -5,9 +5,11 @@
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "homepage": "https://hzzou.github.io/react-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hzzou/react-ui"
+  },
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
@@ -21,21 +23,28 @@
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev"
   },
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
   },
   "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write --no-error-on-unmatched-pattern"
-    ],
+    "*.{md,json}": [],
     "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
+      "eslint --fix"
     ]
   },
   "devDependencies": {
+    "@babel/runtime": "^7.22.15",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@types/react": "^18.0.0",

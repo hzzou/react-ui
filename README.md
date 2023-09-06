@@ -4,3 +4,4 @@
 - 使用 npx create-dumi 进行选择性创建库还是其它内容
 - 文档命名和文档路由使用的是中划线而非驼峰
 - display:table 会导致 table 设置的高度被子元素撑开,要么设置为 display:block,要么在外部再套一层 div
+- pnpm store prune是清除缓存
