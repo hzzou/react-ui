@@ -23,9 +23,6 @@
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev"
   },
-  "files": [
-    "lib"
-  ],
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",

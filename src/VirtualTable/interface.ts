@@ -3,7 +3,7 @@ import React from "react";
 type TextAlign = "left" | "center" | "right";
 
 export interface TableProps {
-  style: object;
+  style?: object;
   height: number;
   itemHeight: number;
   showHeader: boolean;

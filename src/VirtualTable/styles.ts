@@ -44,6 +44,14 @@ export const StylesWrapper = styled.div`
         }
       }
       .tbody {
+        .default{
+          width: 100%;
+          height: 100%;
+          color: #999;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         .tr {
           position: absolute;
           border-bottom: 1px solid #dedede;

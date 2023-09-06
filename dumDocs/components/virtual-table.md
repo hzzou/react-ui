@@ -18,15 +18,21 @@ for (let i = 0; i < len; i++) {
   });
 }
 
+// 滚动事件
+const handleScroll = (event) => {
+    console.log('event:', event);
+};
+
 // tableLayout的fixed需要配合固定宽度
 export default () => {
   return (
     <VirtualTable
-      tableData={tableData}
       stripe
       headerAlign={'center'}
       align={'center'}
       height={300}
+      tableData={tableData}
+      onScroll={handleScroll}
     ></VirtualTable>
   );
 };
@@ -47,7 +53,7 @@ export default () => {
 |  tableData  |      虚拟表格数据      |  Array  |  []   |
 |   stripe    |      是否斑马纹       | Boolean | false |
 | headerAlign |   虚拟表格头部文字对齐方式   | String  | left  |
-|   fixHead   |    虚拟表格头部是否固定    | Boolean | false |
+|   fixHead   |    虚拟表格头部是否固定    | Boolean | true  |
 |    align    | 虚拟表格 body 文字对齐方式 | String  | left  |
 
 ### **VirtualTable Event**

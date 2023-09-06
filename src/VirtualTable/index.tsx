@@ -8,12 +8,12 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		itemHeight = 40,
 		showHeader = true,
 		stripe = false,
-		tableData,
+		tableData = [],
 		height = 400,
-		fixHead = false,
-		style,
+		fixHead = true,
 		headerAlign = "left",
 		align = "left",
+		onScroll
 	} = props;
 
 	const thHead: any = [],
@@ -21,7 +21,7 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		itemCount = tableData.length;
 
 	// 表头
-	const head = Object.keys(tableData[0]);
+	const head = tableData.length > 0 ? Object.keys(tableData[0]) : [];
 	head.forEach((item) => {
 		thHead.push(
 			<li
@@ -40,6 +40,7 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		// 虽然浏览器上看currentTarget是null但是能拿到
 		const { scrollTop } = event.currentTarget;
 		setScrollOffset(scrollTop);
+		onScroll(event); //函数回调，即是事件触发
 	};
 
 	// 获取可视区元素
@@ -74,7 +75,7 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		<StylesWrapper>
 			<div className="virtual-table">
 				<article
-					style={{ ...style, height }}
+					style={{ height }}
 					onScroll={handleScroll}
 					className="table"
 				>
@@ -88,7 +89,20 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 							</ul>
 						</header>
 					)}
-					<section className="tbody" style={{height: showHeader ? height-itemHeight : height}}>{getClientChildren()}</section>
+					<section className="tbody" style={{height: showHeader ? height-itemHeight : height}}>
+
+						{
+							tableData.length > 0 ?
+								<>
+									{getClientChildren()}
+								</>
+								:
+								<div className="default">
+									暂无数据
+								</div>
+
+						}
+					</section>
 				</article>
 			</div>
 		</StylesWrapper>
