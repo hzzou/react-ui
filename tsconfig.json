@@ -7,10 +7,20 @@
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
-      "@@/*": [".dumi/tmp/*"],
-      "react-ui": ["src"],
-      "react-ui/*": ["src/*", "*"]
+      "@@/*": [
+        ".dumi/tmp/*"
+      ],
+      "hzlzh-react-ui": [
+        "src"
+      ],
+      "hzlzh-react-ui/*": [
+        "src/*",
+        "*"
+      ]
     }
   },
-  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*"]
+  "include": [
+    ".dumirc.ts",
+    "src/**/*"
+  ]
 }

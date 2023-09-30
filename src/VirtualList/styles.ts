@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-export const StylesWrapper = styled.div`
+const StylesWrapper = styled.div`
   overflow: auto;
+
   .virtual-list {
     position: relative;
     border: 1px solid #dedede;
     overflow: auto;
+
     .list {
       display: flex;
       align-items: center;
@@ -14,15 +16,20 @@ export const StylesWrapper = styled.div`
       position: absolute;
       width: 100%;
       border-bottom: 1px solid #ddd;
+
       &:last-of-type {
         border-bottom: none;
       }
     }
+
     .list-item-odd {
       background-color: #eee;
     }
+
     .list-item-even {
       background-color: #fff;
     }
   }
 `;
+
+export default StylesWrapper;

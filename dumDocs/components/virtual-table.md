@@ -1,11 +1,12 @@
 # VirtualTable
 
-:::info
+:::info{title=说明}
 虚拟表格,主要用于数据量过多的表格渲染
 :::
 
+## **基本使用**
 ```tsx
-import { VirtualTable } from 'react-ui';
+import { VirtualTable } from 'hzlzh-react-ui';
 
 const tableData = [],
   len = 10000;
@@ -27,7 +28,6 @@ const handleScroll = (event) => {
 export default () => {
   return (
     <VirtualTable
-      stripe
       headerAlign={'center'}
       align={'center'}
       height={300}
@@ -37,12 +37,108 @@ export default () => {
   );
 };
 ```
-:::info
+:::warning{title=提示}
 表格的滚动是相对于外层table，而非tbody
 :::
 
-## **VirtualTable API**
+## **带斑马纹理的表格**
+```tsx
+import { VirtualTable } from 'hzlzh-react-ui';
 
+const tableData = [],
+  len = 10000;
+for (let i = 0; i < len; i++) {
+  tableData.push({
+    name: 'name_' + (i + 1),
+    date: 'date_' + (i + 1),
+    address: 'address_' + (i + 1),
+    state: 'state_' + (i + 1),
+  });
+}
+
+
+export default () => {
+  return (
+    <VirtualTable
+      stripe
+      headerAlign={'center'}
+      align={'center'}
+      height={300}
+      tableData={tableData}
+    ></VirtualTable>
+  );
+};
+```
+
+## **表格单选**
+```tsx
+import { VirtualTable } from 'hzlzh-react-ui';
+
+const tableData = [],
+  len = 10000;
+for (let i = 0; i < len; i++) {
+  tableData.push({
+    name: 'name_' + (i + 1),
+    date: 'date_' + (i + 1),
+    address: 'address_' + (i + 1),
+    state: 'state_' + (i + 1),
+  });
+}
+
+// 选择事件
+const handleCheck = (item) => {
+    console.log('item:', item);
+};
+
+export default () => {
+  return (
+    <VirtualTable
+      headerAlign={'center'}
+      align={'center'}
+      height={300}
+      tableData={tableData}
+      openSelect
+      onCheck={handleCheck}
+    ></VirtualTable>
+  );
+};
+```
+
+## **表格多选**
+```tsx
+import { VirtualTable } from 'hzlzh-react-ui';
+
+const tableData = [],
+  len = 10000;
+for (let i = 0; i < len; i++) {
+  tableData.push({
+    name: 'name_' + (i + 1),
+    date: 'date_' + (i + 1),
+    address: 'address_' + (i + 1),
+    state: 'state_' + (i + 1),
+  });
+}
+
+// 选择事件
+const handleCheck = (item) => {
+    console.log('item:', item);
+};
+
+export default () => {
+  return (
+    <VirtualTable
+      headerAlign={'center'}
+      align={'center'}
+      height={300}
+      tableData={tableData}
+      openSelect
+      multiSelect
+      onCheck={handleCheck}
+    ></VirtualTable>
+  );
+};
+```
+## **VirtualTable API**
 ### **VirtualTable Attributes**
 
 |     属性名     |        说明        |   类型    |  默认值  |
@@ -55,9 +151,12 @@ export default () => {
 | headerAlign |   虚拟表格头部文字对齐方式   | String  | left  |
 |   fixHead   |    虚拟表格头部是否固定    | Boolean | true  |
 |    align    | 虚拟表格 body 文字对齐方式 | String  | left  |
+| openSelect  |     虚拟表格开启选择     | Boolean | false |
+| multiSelect | 虚拟表格开启选择后是否为多选模式 | Boolean | false |
 
 ### **VirtualTable Event**
 
-|    名称    |   说明   |    类型    |
-|:--------:|:------:|:--------:|
-| onScroll | 表格滚动事件 | Function |
+|    名称    |   说明   |    类型    |     参数      | 
+|:--------:|:------:|:--------:|:-----------:|
+| onScroll | 表格滚动事件 | Function | mouseEvent  |
+| onCheck  | 表格选中事件 | Function | item(当前选中项) |

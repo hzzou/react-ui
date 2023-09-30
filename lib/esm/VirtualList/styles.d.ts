@@ -1,6 +1,6 @@
 /// <reference types="react" />
 /// <reference types="react" />
-export declare const StylesWrapper: import("styled-components").IStyledComponent<"web", {
+declare const StylesWrapper: import("styled-components").IStyledComponent<"web", {
     ref?: import("react").LegacyRef<HTMLDivElement> | undefined;
     key?: import("react").Key | null | undefined;
     defaultChecked?: boolean | undefined;
@@ -24,7 +24,7 @@ export declare const StylesWrapper: import("styled-components").IStyledComponent
     style?: import("react").CSSProperties | undefined;
     tabIndex?: number | undefined;
     title?: string | undefined;
-    translate?: "yes" | "no" | undefined;
+    translate?: "no" | "yes" | undefined;
     radioGroup?: string | undefined;
     role?: import("react").AriaRole | undefined;
     about?: string | undefined;
@@ -50,11 +50,11 @@ export declare const StylesWrapper: import("styled-components").IStyledComponent
     results?: number | undefined;
     security?: string | undefined;
     unselectable?: "on" | "off" | undefined;
-    inputMode?: "search" | "text" | "none" | "tel" | "url" | "email" | "numeric" | "decimal" | undefined;
+    inputMode?: "none" | "search" | "text" | "email" | "tel" | "url" | "numeric" | "decimal" | undefined;
     is?: string | undefined;
     "aria-activedescendant"?: string | undefined;
     "aria-atomic"?: (boolean | "true" | "false") | undefined;
-    "aria-autocomplete"?: "list" | "none" | "inline" | "both" | undefined;
+    "aria-autocomplete"?: "none" | "list" | "inline" | "both" | undefined;
     "aria-braillelabel"?: string | undefined;
     "aria-brailleroledescription"?: string | undefined;
     "aria-busy"?: (boolean | "true" | "false") | undefined;
@@ -64,17 +64,17 @@ export declare const StylesWrapper: import("styled-components").IStyledComponent
     "aria-colindextext"?: string | undefined;
     "aria-colspan"?: number | undefined;
     "aria-controls"?: string | undefined;
-    "aria-current"?: boolean | "time" | "true" | "false" | "page" | "step" | "location" | "date" | undefined;
+    "aria-current"?: boolean | "time" | "date" | "true" | "false" | "location" | "page" | "step" | undefined;
     "aria-describedby"?: string | undefined;
     "aria-description"?: string | undefined;
     "aria-details"?: string | undefined;
     "aria-disabled"?: (boolean | "true" | "false") | undefined;
-    "aria-dropeffect"?: "link" | "none" | "copy" | "execute" | "move" | "popup" | undefined;
+    "aria-dropeffect"?: "copy" | "none" | "link" | "execute" | "move" | "popup" | undefined;
     "aria-errormessage"?: string | undefined;
     "aria-expanded"?: (boolean | "true" | "false") | undefined;
     "aria-flowto"?: string | undefined;
     "aria-grabbed"?: (boolean | "true" | "false") | undefined;
-    "aria-haspopup"?: boolean | "dialog" | "menu" | "true" | "false" | "grid" | "listbox" | "tree" | undefined;
+    "aria-haspopup"?: boolean | "dialog" | "menu" | "grid" | "listbox" | "tree" | "true" | "false" | undefined;
     "aria-hidden"?: (boolean | "true" | "false") | undefined;
     "aria-invalid"?: boolean | "true" | "false" | "grammar" | "spelling" | undefined;
     "aria-keyshortcuts"?: string | undefined;
@@ -272,3 +272,4 @@ export declare const StylesWrapper: import("styled-components").IStyledComponent
     onTransitionEnd?: import("react").TransitionEventHandler<HTMLDivElement> | undefined;
     onTransitionEndCapture?: import("react").TransitionEventHandler<HTMLDivElement> | undefined;
 }>;
+export default StylesWrapper;

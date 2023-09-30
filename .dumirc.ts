@@ -11,10 +11,10 @@ export default defineConfig({
   base: baseUrl,
   publicPath: `${baseUrl}`,
   resolve: {
-    docDirs: ['dumDocs'],
+    docDirs: ['dumDocs']
   },
   themeConfig: {
-    name: 'react-ui',
+    name: 'reactUI',
     nav: [
       { title: '介绍', link: '/' },
       { title: '组件', link: '/components/virtual-list' },
@@ -22,10 +22,12 @@ export default defineConfig({
     sidebar: {
       '/components': [
         {
-          title: '虚拟类',
+          title: '组件',
           children: [
             { title: 'VirtualList虚拟列表', link: '/components/virtual-list' },
-            { title: 'VirtualList虚拟表格', link: '/components/virtual-table' },
+            { title: 'VirtualTable虚拟表格', link: '/components/virtual-table' },
+            { title: 'VirtualSelect虚拟下拉框', link: '/components/virtual-select' },
+            { title: 'Icon字体图标', link: '/components/icon' },
           ],
         },
       ],

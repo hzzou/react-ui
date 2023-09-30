@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StylesWrapper = styled.div` 
+const StylesWrapper = styled.div` 
   .virtual-table {
     border: 1px solid #dedede;
     color: #333;
@@ -17,6 +17,7 @@ export const StylesWrapper = styled.div`
         .tr {
           display: flex;
           width: 100%;
+          cursor: pointer;
           margin: 0;
           padding: 0;
           .th,
@@ -28,6 +29,9 @@ export const StylesWrapper = styled.div`
             line-height: 1em;
             &:last-of-type {
               border-right: none;
+            }
+            input{
+              
             }
           }
         }
@@ -72,3 +76,5 @@ export const StylesWrapper = styled.div`
     }
   }
 `;
+
+export default StylesWrapper;

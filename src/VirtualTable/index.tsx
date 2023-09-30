@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { TableProps } from "./interface";
-import { StylesWrapper } from "./styles";
+import React, {useEffect, useRef, useState} from "react";
+import {ItemObj, TableProps} from "./interface";
+import StylesWrapper from "./styles";
 import VirtualRow from "./virtualRow";
 
 const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
@@ -13,11 +13,19 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		fixHead = true,
 		headerAlign = "left",
 		align = "left",
+		openSelect = false,
+		multiSelect = false,
+		onCheck,
 		onScroll
 	} = props;
 
+	const inputRef = useRef<HTMLInputElement>(null);
+
 	const thHead: any = [],
 		[scrollOffset, setScrollOffset] = useState(0),
+		[currentIdx, setCurrentIdx] = useState(-1),
+		[selected, setSelected] = useState<number[]>([]),
+		[selectedItem, setSelectedItem] = useState<Array<ItemObj>>([]),
 		itemCount = tableData.length;
 
 	// 表头
@@ -34,13 +42,64 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		);
 	});
 
+	// 开启选择框
+	openSelect && thHead.unshift(
+		<li className="th" key={"checkbox"}>
+			<input type="checkbox" ref={inputRef} />
+		</li>
+	);
+
+	useEffect(()=>{
+		if(openSelect){
+			if(multiSelect){
+				const len = selected.length;
+				if(len > 0 && len < itemCount){
+					inputRef!.current!.indeterminate = true;
+				}
+				else if(len=== itemCount){
+					inputRef!.current!.indeterminate = false;
+					inputRef!.current!.checked = true;
+				}
+			}
+			else{
+				currentIdx > -1 ? inputRef!.current!.indeterminate = true : inputRef!.current!.indeterminate = false;
+			}
+		}
+	}, [inputRef, multiSelect, openSelect, currentIdx, selected]);
+
+
 	// 获取距离顶部的滚动距离
 	// 滚动事件不能添加到tbody上,会影响到fixHead固定头部属性
 	const handleScroll = (event: any) => {
 		// 虽然浏览器上看currentTarget是null但是能拿到
 		const { scrollTop } = event.currentTarget;
 		setScrollOffset(scrollTop);
-		onScroll(event); //函数回调，即是事件触发
+		onScroll && onScroll(event); //函数回调，即是事件触发
+	};
+
+	// 行选中
+	const handleCheck = (item: ItemObj, current: number) => {
+		if(multiSelect){
+			const arr = selected.includes(current) ? selected.filter(ele=>ele!==current) : [...selected, current];
+			const itemArr = selectedItem.includes(item) ? selectedItem.filter(ele=>ele!==item) : [...selectedItem, item];
+
+			setSelected(arr);
+			setSelectedItem(itemArr);
+			onCheck && onCheck(itemArr);
+		}
+		else{
+			const idx = currentIdx === current ? -1 : current;
+			setCurrentIdx(idx);
+			onCheck && onCheck(item);
+		}
+
+	};
+
+	// 全选中
+	const handleAllSelect = ()=>{
+		inputRef!.current!.checked = !inputRef!.current!.checked ;
+		const arr = selected.length > 0 ? [] : tableData.map((ele, idx)=>idx);
+		setSelected(arr);
 	};
 
 	// 获取可视区元素
@@ -60,11 +119,16 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 			};
 			item.push(
 				<VirtualRow
-					key={i + Math.random()}
+					key={i}
 					idx={i}
 					stripe={stripe}
 					item={tableData[i]}
 					style={itemStyle}
+					checked={multiSelect ?
+						selected.includes(i) ? true: false :
+						currentIdx === i ? true : false}
+					openSelect={openSelect}
+					onCheck={handleCheck}
 				/>,
 			);
 		}
@@ -84,7 +148,7 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 							className="thead"
 							style={{ position: fixHead ? "sticky" : "relative" }}
 						>
-							<ul className="tr" style={{ textAlign: headerAlign }}>
+							<ul onClick={handleAllSelect} className="tr" style={{ textAlign: headerAlign }}>
 								{thHead}
 							</ul>
 						</header>
