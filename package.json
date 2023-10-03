@@ -22,8 +22,8 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "start": "npm run dev",
-    "test": "jest virtualTable ",
-    "coverage": "jest virtualTable --coverage"
+    "test": "jest virtualSelect ",
+    "coverage": "jest virtualSelect --coverage"
   },
   "exports": {
     ".": {

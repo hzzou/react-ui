@@ -64,6 +64,5 @@ describe("测试虚拟table", ()=>{
 		fireEvent.click(ele);
 		expect(handleCheck).toHaveBeenCalled();
 
-
 	});
 });
