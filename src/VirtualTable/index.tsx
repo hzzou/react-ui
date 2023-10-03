@@ -23,9 +23,9 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 
 	const thHead: any = [],
 		[scrollOffset, setScrollOffset] = useState(0),
-		[currentIdx, setCurrentIdx] = useState(-1),
-		[selected, setSelected] = useState<number[]>([]),
-		[selectedItem, setSelectedItem] = useState<Array<ItemObj>>([]),
+		[currentIdx, setCurrentIdx] = useState(-1), // 单选的当前索引
+		[selected, setSelected] = useState<number[]>([]), // 多选的索引数组
+		[selectedItem, setSelectedItem] = useState<Array<ItemObj>>([]), // 多选的item数组
 		itemCount = tableData.length;
 
 	// 表头
@@ -85,21 +85,29 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 
 			setSelected(arr);
 			setSelectedItem(itemArr);
-			onCheck && onCheck(itemArr);
+			openSelect && onCheck && onCheck(itemArr);
 		}
 		else{
 			const idx = currentIdx === current ? -1 : current;
 			setCurrentIdx(idx);
-			onCheck && onCheck(item);
+			openSelect && onCheck && onCheck(item);
 		}
 
 	};
 
 	// 全选中
 	const handleAllSelect = ()=>{
-		inputRef!.current!.checked = !inputRef!.current!.checked ;
-		const arr = selected.length > 0 ? [] : tableData.map((ele, idx)=>idx);
-		setSelected(arr);
+		if(multiSelect){
+			inputRef!.current!.checked = false;
+			const arr = selected.length > 0 ? [] : tableData.map((ele, idx)=>idx);
+			setSelected(arr);
+		}
+		else{
+			inputRef!.current!.checked = false;
+			inputRef!.current!.indeterminate = false;
+			setCurrentIdx(-1);
+		}
+
 	};
 
 	// 获取可视区元素

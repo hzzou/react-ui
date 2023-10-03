@@ -22,3 +22,5 @@ npm i hzlzh-react-ui
 * verdaccio本地配置文件位置: /Users/用户名/.config/verdaccio/config.yaml
 * storage属性指定包存储位置
 * 发包npm publish，npm unpublish <包名>@版本号 --force (force可视情况加，不输入版本号就是删除整个包的所有版本)
+* jest添加对esm模式的支持，需要在jest.config.ts文件中添加transform对象列{'^.+\\.tsx?$': 'ts-jest'}，安装ts-jest插件
+* @testing-library/react的screen不支持id和class查询,但可以使用渲染后的container用原生querySelect等方式获取

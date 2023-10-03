@@ -24,6 +24,10 @@ const handleScroll = (event) => {
     console.log('event:', event);
 };
 
+const handleCheck = (item) => {
+    console.log(item)
+}
+
 // tableLayout的fixed需要配合固定宽度
 export default () => {
   return (
@@ -32,6 +36,7 @@ export default () => {
       align={'center'}
       height={300}
       tableData={tableData}
+      onCheck={handleCheck}
       onScroll={handleScroll}
     ></VirtualTable>
   );

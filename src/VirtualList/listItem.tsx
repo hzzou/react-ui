@@ -1,5 +1,5 @@
 //虚拟列表Item
-import React, {useState} from "react";
+import React from "react";
 import {ItemObj, ItemProps} from "./interface";
 
 const ListItem: React.FC<ItemProps> = ({
@@ -22,8 +22,8 @@ const ListItem: React.FC<ItemProps> = ({
 			className={
 				stripe
 					? idx % 2
-						? selected === idx ? "selected list list-item-odd" : "list list-item-odd"
-						: selected === idx ? "selected list list-item-even" : "list list-item-even"
+						? selected === idx ? "selected list list-item-even" : "list list-item-even"
+						: selected === idx ? "selected list list-item-odd" : "list list-item-odd"
 					: selected === idx ? "selected list" : "list"
 			}
 			style={style}

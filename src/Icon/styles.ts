@@ -1,21 +1,21 @@
-import styled from "styled-components";
-// @ts-ignore
+import styled, {createGlobalStyle} from "styled-components";
+
 import woff2 from "../../assets/fonts/iconfont.woff2";
-// @ts-ignore
 import woff from "../../assets/fonts/iconfont.woff";
-// @ts-ignore
 import ttf from "../../assets/fonts/iconfont.ttf";
 
 // 需要先引入，再给url
-const StylesWrapper = styled.span`
-  @font-face {
-    font-family: "iconfont";
-    src: url('${woff2}') format('woff2'),
-    url('${woff}') format('woff'),
-    url('${ttf}') format('truetype');
-  }
+// const GlobalStyle = createGlobalStyle`
+//   @font-face {
+//     font-family: "iconfont";
+//     src: url(${woff2}) format('woff2'),
+//     url(${woff}) format('woff'),
+//     url(${ttf}) format('truetype');
+//   }
+// `;
 
-  .iconfont {
+const StylesWrapper = styled.span`
+  /*.iconfont {
     font-family: "iconfont" !important;
     font-size: 16px;
     font-style: normal;
@@ -741,7 +741,6 @@ const StylesWrapper = styled.span`
 
   .icon-top:before {
     content: "\\e6de";
-  }
+  }*/
 `;
-
-export default StylesWrapper;
+export {StylesWrapper};
