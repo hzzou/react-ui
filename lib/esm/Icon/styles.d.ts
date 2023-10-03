@@ -10,7 +10,7 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     accessKey?: string | undefined;
     autoFocus?: boolean | undefined;
     className?: string | undefined;
-    contentEditable?: "inherit" | (boolean | "true" | "false") | undefined;
+    contentEditable?: (boolean | "true" | "false") | "inherit" | undefined;
     contextMenu?: string | undefined;
     dir?: string | undefined;
     draggable?: (boolean | "true" | "false") | undefined;
@@ -24,7 +24,7 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     style?: import("react").CSSProperties | undefined;
     tabIndex?: number | undefined;
     title?: string | undefined;
-    translate?: "no" | "yes" | undefined;
+    translate?: "yes" | "no" | undefined;
     radioGroup?: string | undefined;
     role?: import("react").AriaRole | undefined;
     about?: string | undefined;
@@ -50,7 +50,7 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     results?: number | undefined;
     security?: string | undefined;
     unselectable?: "on" | "off" | undefined;
-    inputMode?: "none" | "search" | "text" | "email" | "tel" | "url" | "numeric" | "decimal" | undefined;
+    inputMode?: "none" | "search" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | undefined;
     is?: string | undefined;
     "aria-activedescendant"?: string | undefined;
     "aria-atomic"?: (boolean | "true" | "false") | undefined;
@@ -64,7 +64,7 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     "aria-colindextext"?: string | undefined;
     "aria-colspan"?: number | undefined;
     "aria-controls"?: string | undefined;
-    "aria-current"?: boolean | "time" | "date" | "true" | "false" | "location" | "page" | "step" | undefined;
+    "aria-current"?: boolean | "time" | "true" | "false" | "page" | "step" | "location" | "date" | undefined;
     "aria-describedby"?: string | undefined;
     "aria-description"?: string | undefined;
     "aria-details"?: string | undefined;
@@ -74,7 +74,7 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     "aria-expanded"?: (boolean | "true" | "false") | undefined;
     "aria-flowto"?: string | undefined;
     "aria-grabbed"?: (boolean | "true" | "false") | undefined;
-    "aria-haspopup"?: boolean | "dialog" | "menu" | "grid" | "listbox" | "tree" | "true" | "false" | undefined;
+    "aria-haspopup"?: boolean | "dialog" | "menu" | "true" | "false" | "grid" | "listbox" | "tree" | undefined;
     "aria-hidden"?: (boolean | "true" | "false") | undefined;
     "aria-invalid"?: boolean | "true" | "false" | "grammar" | "spelling" | undefined;
     "aria-keyshortcuts"?: string | undefined;
@@ -272,4 +272,4 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     onTransitionEnd?: import("react").TransitionEventHandler<HTMLSpanElement> | undefined;
     onTransitionEndCapture?: import("react").TransitionEventHandler<HTMLSpanElement> | undefined;
 }>;
-export default StylesWrapper;
+export { StylesWrapper };

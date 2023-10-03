@@ -4,6 +4,7 @@
 dumDocs
 node_modules
 docs
+dumDocs
 src
 .dumirc.ts
 .editorconfig
@@ -11,9 +12,12 @@ src
 .fatherrc.ts
 .gitignore
 .prettierignore
-.prettierric.js
+.prettierrc.js
 .stylelintrc
-pnpm-loc.yaml
+pnpm-lock.yaml
 tsconfig.json
+jest.config.ts
+coverage
+
 
 

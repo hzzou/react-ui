@@ -2,21 +2,21 @@ import React from "react";
 type TextAlign = "left" | "center" | "right";
 export interface ItemObj {
     name: string;
-    value: string | number;
+    value?: string | number;
     [key: string]: any;
 }
 export interface TableProps {
     style?: object;
-    height: number;
-    itemHeight: number;
+    height?: number;
+    itemHeight?: number;
     showHeader?: boolean;
     openSelect?: boolean;
     multiSelect?: boolean;
-    tableData: Array<ItemObj>;
-    stripe: boolean;
-    headerAlign: TextAlign;
-    align: TextAlign;
-    fixHead: boolean;
+    tableData?: Array<ItemObj>;
+    stripe?: boolean;
+    headerAlign?: TextAlign;
+    align?: TextAlign;
+    fixHead?: boolean;
     onScroll?: (event: React.MouseEvent) => void;
     onCheck?: (item: ItemObj | Array<ItemObj>) => void;
 }
