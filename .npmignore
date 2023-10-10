@@ -8,7 +8,7 @@ dumDocs
 src
 .dumirc.ts
 .editorconfig
-.eslintrc.js
+.eslintrc.cjs
 .fatherrc.ts
 .gitignore
 .prettierignore

@@ -24,8 +24,8 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 	const thHead: any = [],
 		[scrollOffset, setScrollOffset] = useState(0),
 		[currentIdx, setCurrentIdx] = useState(-1), // 单选的当前索引
-		[selected, setSelected] = useState<number[]>([]), // 多选的索引数组
-		[selectedItem, setSelectedItem] = useState<Array<ItemObj>>([]), // 多选的item数组
+		[selected, setSelected] = useState<number[]>([]), // 多选的标记索引数组
+		[selectedItem, setSelectedItem] = useState<Array<ItemObj>>([]), // 多选选中多行的item数组
 		itemCount = tableData.length;
 
 	// 表头
@@ -49,14 +49,19 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		</li>
 	);
 
+	// 此处Effect是为了监控设置input的半选和全选
 	useEffect(()=>{
 		if(openSelect){
 			if(multiSelect){
 				const len = selected.length;
-				if(len > 0 && len < itemCount){
+				if(len === 0){
+					inputRef!.current!.indeterminate = false;
+					inputRef!.current!.checked = false;
+				}
+				else if(len > 0 && len < itemCount){
 					inputRef!.current!.indeterminate = true;
 				}
-				else if(len=== itemCount){
+				else if(len === itemCount){
 					inputRef!.current!.indeterminate = false;
 					inputRef!.current!.checked = true;
 				}
@@ -90,7 +95,7 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		else{
 			const idx = currentIdx === current ? -1 : current;
 			setCurrentIdx(idx);
-			openSelect && onCheck && onCheck(item);
+			openSelect && onCheck && onCheck( idx === -1 ? {} as ItemObj : item);
 		}
 
 	};
@@ -100,7 +105,10 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 		if(multiSelect){
 			inputRef!.current!.checked = false;
 			const arr = selected.length > 0 ? [] : tableData.map((ele, idx)=>idx);
+			const itemArr = selectedItem.length > 0 ? [] : tableData;
 			setSelected(arr);
+			setSelectedItem(itemArr);
+			onCheck && onCheck(itemArr);
 		}
 		else{
 			inputRef!.current!.checked = false;
