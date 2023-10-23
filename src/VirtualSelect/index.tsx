@@ -12,7 +12,7 @@ const VirtualSelect: React.FC<SelectProps> = (props: SelectProps) => {
 		[inputValue, setInput] = useState("");
 
 	// 显示下拉框
-	const handleClick = ()=>{
+	const handleOption = ()=>{
 		setShowOption(!showOption);
 	};
 
@@ -26,11 +26,23 @@ const VirtualSelect: React.FC<SelectProps> = (props: SelectProps) => {
 		}, 800);
 	};
 
+	// 失去焦点
+	const handleBlur = (event: any)=>{
+		const {value} = event.currentTarget;
+
+		setTimeout(()=>{
+			if(inputValue === value){
+				setShowOption(false);
+			}
+		}, 800);
+	};
+
+
 	return(
 		<StylesWrapper>
 			<div className="virtual-select" style={{width}}>
-				<input defaultValue={inputValue} onClick={handleClick} className="input" style={{width, height: itemHeight}}></input>
-				<div className="icon" onClick={handleClick}>
+				<input defaultValue={inputValue} onFocus={handleOption} onBlur={handleBlur} className="input" style={{width, height: itemHeight}}></input>
+				<div className="icon" onClick={handleOption}>
 					{   showOption ?
 						<Icon name='arrow-up-bold'></Icon> :
 						<Icon name='arrow-down-bold'></Icon>
