@@ -8,7 +8,7 @@ const VirtualList: React.FC<ListProps> = (props: ListProps) => {
 	const { height = 300, width = 600, itemHeight = 30, stripe = false, listData, onScroll, onClick} = props;
 
 	// 记录滚动高度
-	const [scrollOffset, setScrolllOffset] = useState(0),
+	const [scrollOffset, setScrollOffset] = useState(0),
 		itemCount = listData.length,
 		[selected, setSelected] = useState(-1); // 有为0的情况,所以初始值设为-1
 
@@ -51,7 +51,7 @@ const VirtualList: React.FC<ListProps> = (props: ListProps) => {
 	// 获取距离顶部的滚动值
 	const handleScroll = (event: any) => {
 		const { scrollTop } = event.currentTarget;
-		setScrolllOffset(scrollTop);
+		setScrollOffset(scrollTop);
 		onScroll && onScroll(event); //函数回调，即是事件触发
 	};
 

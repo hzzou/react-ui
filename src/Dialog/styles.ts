@@ -1,0 +1,72 @@
+import styled, {createGlobalStyle} from "styled-components";
+
+// 全局样式根据show和modal动态创建,否则样式不生效
+const GlobalStyle = createGlobalStyle`
+  .no-modal{
+    position: fixed;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    margin: auto;
+    z-index: 1000;
+    .dialog{
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #dedede;
+      border-radius: 5px;
+      box-shadow: 0 0 6px #dedede;
+      padding: 10px;
+      font-size: 16px;
+      .header, .footer{
+        flex: 0 0 40px;
+        line-height: 40px;
+      }
+      .header{
+        display: flex;
+        justify-content: space-between;
+      }
+      .body{
+        flex: 1 1 auto;
+      }
+    }
+  }
+`;
+
+export {GlobalStyle};
+
+const StylesWrapper = styled.section`
+  .modal{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .dialog{
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #dedede;
+      border-radius: 5px;
+      box-shadow: 0 0 6px #dedede;
+      padding: 10px;
+      font-size: 16px;
+      .header, .footer{
+        flex: 0 0 40px;
+        line-height: 40px;
+      }
+      .header{
+        display: flex;
+        justify-content: space-between;
+      }
+      .body{
+        flex: 1 1 auto;
+      }
+    }
+  }
+`;
+
+export default StylesWrapper;

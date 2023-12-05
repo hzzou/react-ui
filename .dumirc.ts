@@ -28,6 +28,8 @@ export default defineConfig({
             { title: 'VirtualTable虚拟表格', link: '/components/virtual-table' },
             { title: 'VirtualSelect虚拟下拉框', link: '/components/virtual-select' },
             { title: 'Icon字体图标', link: '/components/icon' },
+            { title: 'Modal弹框', link: '/components/modal' },
+            { title: 'Dialog弹框', link: '/components/dialog' },
           ],
         },
       ],
