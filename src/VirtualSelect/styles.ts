@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StylesWrapper = styled.div`
-  .virtual-select{
+  .hz-virtual-select{
     position: relative;
     .input{
       border: 1px solid #dedede;
@@ -39,7 +39,7 @@ const StylesWrapper = styled.div`
       z-index: 10;
       background: #fff;
       overflow: auto;
-      .virtual-list{
+      .hz-virtual-list{
         border: none;
         .selected {
           background-color: #ddd !important;

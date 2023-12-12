@@ -8,6 +8,6 @@ export interface DialogProps {
     width: number | string;
     height: number | string;
     modal: boolean;
-    onOpen: () => void;
-    onClose: () => void;
+    onOpen: (value: boolean) => void;
+    onClose: (event: React.MouseEvent) => void;
 }

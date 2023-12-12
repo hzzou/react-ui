@@ -40,7 +40,7 @@ const VirtualSelect: React.FC<SelectProps> = (props: SelectProps) => {
 
 	return(
 		<StylesWrapper>
-			<div className="virtual-select" style={{width}}>
+			<div className="hz-virtual-select" style={{width}}>
 				<input defaultValue={inputValue} onFocus={handleOption} onBlur={handleBlur} className="input" style={{width, height: itemHeight}}></input>
 				<div className="icon" onClick={handleOption}>
 					{   showOption ?

@@ -1,0 +1,49 @@
+
+$-color-primary: rgba(64, 158, 255, 1) !default;
+$-color-white: rgba(255, 255, 255, 1) !default;
+$-color-black: rgba(0, 0, 0, 1) !default;
+
+// 90%的$-color-primary，10%的$-color-white
+$-color-primary-light-1: mix($-color-primary, $-color-white, 10%);
+$-color-primary-light-2: mix($-color-primary, $-color-white, 20%);
+$-color-primary-light-3: mix($-color-primary, $-color-white, 30%);
+$-color-primary-light-4: mix($-color-primary, $-color-white, 40%);
+$-color-primary-light-5: mix($-color-primary, $-color-white, 50%);
+$-color-primary-light-6: mix($-color-primary, $-color-white, 60%);
+$-color-primary-light-7: mix($-color-primary, $-color-white, 70%);
+$-color-primary-light-8: mix($-color-primary, $-color-white, 80%);
+$-color-primary-light-9: mix($-color-primary, $-color-white, 90%);
+
+$-color-success: rgba(103, 194, 58, 1);
+$-color-warning: rgba(230, 162, 60, 1);
+$-color-danger: rgb(245, 108, 108, 1);
+
+// 1表示主色调占10%
+$-color-success-light-1: mix($-color-success, $-color-white, 10%);
+$-color-success-light-2: mix($-color-success, $-color-white, 20%);
+$-color-success-light-3: mix($-color-success, $-color-white, 30%);
+$-color-success-light-4: mix($-color-success, $-color-white, 40%);
+$-color-success-light-5: mix($-color-success, $-color-white, 50%);
+$-color-success-light-6: mix($-color-success, $-color-white, 60%);
+$-color-success-light-7: mix($-color-success, $-color-white, 70%);
+$-color-success-light-8: mix($-color-success, $-color-white, 80%);
+$-color-success-light-9: mix($-color-success, $-color-white, 90%);
+$-color-waring-light-1: mix($-color-warning, $-color-white, 10%);
+$-color-waring-light-2: mix($-color-warning, $-color-white, 20%);
+$-color-waring-light-3: mix($-color-warning, $-color-white, 30%);
+$-color-waring-light-4: mix($-color-warning, $-color-white, 40%);
+$-color-waring-light-5: mix($-color-warning, $-color-white, 50%);
+$-color-waring-light-6: mix($-color-warning, $-color-white, 60%);
+$-color-waring-light-7: mix($-color-warning, $-color-white, 70%);
+$-color-waring-light-8: mix($-color-warning, $-color-white, 80%);
+$-color-waring-light-9: mix($-color-warning, $-color-white, 90%);
+
+$-color-danger-light-1: mix($-color-danger, $-color-white, 10%);
+$-color-danger-light-2: mix($-color-danger, $-color-white, 20%);
+$-color-danger-light-3: mix($-color-danger, $-color-white, 30%);
+$-color-danger-light-4: mix($-color-danger, $-color-white, 40%);
+$-color-danger-light-5: mix($-color-danger, $-color-white, 50%);
+$-color-danger-light-6: mix($-color-danger, $-color-white, 60%);
+$-color-danger-light-7: mix($-color-danger, $-color-white, 70%);
+$-color-danger-light-8: mix($-color-danger, $-color-white, 80%);
+$-color-danger-light-9: mix($-color-danger, $-color-white, 90%);

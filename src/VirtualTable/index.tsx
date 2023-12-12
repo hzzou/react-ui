@@ -153,7 +153,7 @@ const VirtualTable: React.FC<TableProps> = (props: TableProps) => {
 
 	return (
 		<StylesWrapper>
-			<div className="virtual-table">
+			<div className="hz-virtual-table">
 				<article
 					style={{ height }}
 					onScroll={handleScroll}

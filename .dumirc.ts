@@ -24,6 +24,7 @@ export default defineConfig({
         {
           title: '组件',
           children: [
+            { title: "Button按钮", link: '/components/button'},
             { title: 'VirtualList虚拟列表', link: '/components/virtual-list' },
             { title: 'VirtualTable虚拟表格', link: '/components/virtual-table' },
             { title: 'VirtualSelect虚拟下拉框', link: '/components/virtual-select' },

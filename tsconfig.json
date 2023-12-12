@@ -21,6 +21,7 @@
   },
   "include": [
     ".dumirc.ts",
-    "src/**/*"
+    "src/**/*",
+    "type.d.ts"
   ]
 }

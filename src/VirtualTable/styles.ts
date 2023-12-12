@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StylesWrapper = styled.div` 
-  .virtual-table {
+  .hz-virtual-table {
     border: 1px solid #dedede;
     color: #333;
     width: 100%;

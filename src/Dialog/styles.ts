@@ -4,17 +4,19 @@ import styled, {createGlobalStyle} from "styled-components";
 const GlobalStyle = createGlobalStyle`
   .no-modal{
     position: fixed;
-    top: 0; left: 0;
-    right: 0; bottom: 0;
-    margin: auto;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1000;
-    .dialog{
+    display: grid;
+    place-items: center;
+    .hz-dialog{
       background: #fff;
       display: flex;
       flex-direction: column;
       border: 1px solid #dedede;
       border-radius: 5px;
       box-shadow: 0 0 6px #dedede;
+      box-sizing: border-box;
       padding: 10px;
       font-size: 16px;
       .header, .footer{
@@ -45,13 +47,14 @@ const StylesWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    .dialog{
+    .hz-dialog{
       background: #fff;
       display: flex;
       flex-direction: column;
       border: 1px solid #dedede;
       border-radius: 5px;
       box-shadow: 0 0 6px #dedede;
+      box-sizing: border-box;
       padding: 10px;
       font-size: 16px;
       .header, .footer{

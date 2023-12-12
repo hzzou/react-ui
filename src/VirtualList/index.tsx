@@ -58,7 +58,7 @@ const VirtualList: React.FC<ListProps> = (props: ListProps) => {
 	return (
 		<StylesWrapper>
 			<div
-				className="virtual-list"
+				className="hz-virtual-list"
 				style={{ width, height }}
 				onScroll={handleScroll}
 			>

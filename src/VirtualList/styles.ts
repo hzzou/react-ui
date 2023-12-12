@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StylesWrapper = styled.div`
   overflow: auto;
 
-  .virtual-list {
+  .hz-virtual-list {
     position: relative;
     border: 1px solid #dedede;
     overflow: auto;

@@ -5,6 +5,7 @@ module.exports = {
 	},
 	"extends": require.resolve("@umijs/lint/dist/config/eslint"),
 	"rules": {
+		"react/button-has-type": "off",
 		"@typescript-eslint/no-unused-expressions": "warn",
 		"@typescript-eslint/no-unused-vars": "warn",
 		"indent": [

@@ -5,16 +5,21 @@ import {DialogProps} from "hzlzh-react-ui/Dialog/interface";
 import Icon from "../Icon";
 
 
-const Dialog:React.FC<DialogProps> = (props: DialogProps)=>{
+const Dialog: React.FC<DialogProps> = (props: DialogProps)=>{
 
 	const {showDialog = false, width = 500, height = 300,
 		title, content, footer, modal = true, onOpen, onClose} = props;
 
 	const [show, setShow] = useState(false);
 
-	// 监控来自父级的showDialog变化
+	// 监控多次来自父级的showDialog变化，
+	// 本身关闭时，通过父级二次传进来
 	useEffect(() => {
 		setShow(showDialog);
+		// 打开时触发
+		if(showDialog){
+			onOpen && onOpen(showDialog);
+		}
 	}, [showDialog]);
 
 	// 关闭弹窗
@@ -22,21 +27,19 @@ const Dialog:React.FC<DialogProps> = (props: DialogProps)=>{
 		event.stopPropagation();
 
 		setShow(false);
-		onClose &&  onClose();
+		onClose && onClose(event);
 	};
 
 	// modal为false时, 使用createPortal把Dialog插入body
 	const Dialog = ()=>{
 		return(
 			show ?
-				<div className="dialog"
-					onClick={(event)=>event.stopPropagation()}
-					style={{width: width, height: height}}>
+				<div className="hz-dialog"
+					 style={{width: width, height: height}}
+					 onClick={(event)=>event.stopPropagation()}>
 					<header className="header">
 						<div>{title || "标题"}</div>
-						<div onClick={handleClose}>
-							<Icon name={"close"} size={20} ></Icon>
-						</div>
+						<Icon onClick={handleClose} name={"close"} size={20} ></Icon>
 					</header>
 					<article className="body">
 						{content}
@@ -50,13 +53,14 @@ const Dialog:React.FC<DialogProps> = (props: DialogProps)=>{
 
 	return(
 		<>
-			{ modal ?
+			{modal ?
 				<StylesWrapper >
-					<div className={show ? "modal" : ""}  onClick={handleClose} >
+					{/*此处click事件是点击蒙层时关闭弹窗*/}
+					<div className={show ? "modal" : ""} onClick={handleClose}>
 						<Dialog  />
 					</div>
 				</StylesWrapper> :
-				createPortal(<div className="no-modal" style={{width: width, height: height}}><Dialog  /></div>,  document.body)
+				show && createPortal(<div className="no-modal"><Dialog  /></div>, document.body)
 			}
 			{show && !modal ? <GlobalStyle /> : null}
 		</>
