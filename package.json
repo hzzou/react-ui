@@ -1,6 +1,6 @@
 {
   "name": "hzlzh-react-ui",
-  "version": "0.0.4",
+  "version": "0.0.5-0",
   "description": "使用dumi开发的个人react组件库",
   "license": "MIT",
   "type": "module",
