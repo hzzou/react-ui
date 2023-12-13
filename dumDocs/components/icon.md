@@ -4,7 +4,6 @@
 :::
 
 ## **基本用法**
-
 ```tsx
 import {Icon} from "hzlzh-react-ui";
 
@@ -16,6 +15,7 @@ export default () => {
     );
 };
 ```
+
 ## **Icon API**
 ### **Icon Attributes**
 

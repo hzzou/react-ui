@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// 没用style-components用法，使用css-module(sass)
 const StylesWrapper = styled.section`
     .hz-button{
       @keyframes  loading-rotate{

@@ -17,7 +17,7 @@ export default defineConfig({
     name: 'reactUI',
     nav: [
       { title: '介绍', link: '/' },
-      { title: '组件', link: '/components/virtual-list' },
+      { title: '组件', link: '/components/button' },
     ],
     sidebar: {
       '/components': [

@@ -50,11 +50,11 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     results?: number | undefined;
     security?: string | undefined;
     unselectable?: "on" | "off" | undefined;
-    inputMode?: "text" | "search" | "none" | "tel" | "url" | "email" | "numeric" | "decimal" | undefined;
+    inputMode?: "none" | "search" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | undefined;
     is?: string | undefined;
     "aria-activedescendant"?: string | undefined;
     "aria-atomic"?: (boolean | "true" | "false") | undefined;
-    "aria-autocomplete"?: "list" | "none" | "inline" | "both" | undefined;
+    "aria-autocomplete"?: "none" | "list" | "inline" | "both" | undefined;
     "aria-braillelabel"?: string | undefined;
     "aria-brailleroledescription"?: string | undefined;
     "aria-busy"?: (boolean | "true" | "false") | undefined;
@@ -64,12 +64,12 @@ declare const StylesWrapper: import("styled-components").IStyledComponent<"web",
     "aria-colindextext"?: string | undefined;
     "aria-colspan"?: number | undefined;
     "aria-controls"?: string | undefined;
-    "aria-current"?: boolean | "time" | "step" | "true" | "false" | "page" | "location" | "date" | undefined;
+    "aria-current"?: boolean | "time" | "true" | "false" | "page" | "step" | "location" | "date" | undefined;
     "aria-describedby"?: string | undefined;
     "aria-description"?: string | undefined;
     "aria-details"?: string | undefined;
     "aria-disabled"?: (boolean | "true" | "false") | undefined;
-    "aria-dropeffect"?: "link" | "none" | "copy" | "execute" | "move" | "popup" | undefined;
+    "aria-dropeffect"?: "copy" | "none" | "link" | "execute" | "move" | "popup" | undefined;
     "aria-errormessage"?: string | undefined;
     "aria-expanded"?: (boolean | "true" | "false") | undefined;
     "aria-flowto"?: string | undefined;

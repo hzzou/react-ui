@@ -112,7 +112,6 @@ export default ()=>{
 :::info{title=说明}
 默认尺寸是medium，还有small和large，通过size属性设置
 :::
-
 ```tsx
 import {Button} from "hzlzh-react-ui";
 
@@ -126,4 +125,29 @@ export default ()=>{
     )
 }
 ```
+
+## **Button API**
+###  **Button Attributes**
+
+|     属性名      |     说明      |    类型     |    默认值    |                     可选值                      |
+|:------------:|:-----------:|:---------:|:---------:|:--------------------------------------------:|
+|     type     |    按钮类型     |  String   |  default  |  default, primary, success, warning, danger  |
+|     size     |    按钮大小     |  String   |  medium   |             small, medium, large             |
+|  nativeType  |  原生type属性   |  String   |  button   |            button, submit, reset             |
+|   iconName   |  图标组件的中文名称  |  String   |    ""     |               见Icon组件的name可选值                |
+|   loading    |  是否为加载中状态   |  Boolean  |   false   |                                              |
+|    round     |   是否为圆角按钮   |  Boolean  |   false   |                                              |
+|    circle    |   是否为圆形按钮   |  Boolean  |   false   |                                              |
+|    plain     |   是否为朴素按钮   |  Boolean  |   false   |                                              |
+|   disabled   |   是否为禁用状态   |  Boolean  |   false   |                                              |
+
+###  **Button Events**
+|    名称     |   说明   |     类型     |      参数      |
+|:---------:|:------:|:----------:|:------------:|
+|  onClick  |  点击事件  |  Function  |  mouseEvent  |
+
+### **Button Slots**
+|    插槽名称    |     说明      |
+|:----------:|:-----------:|
+|  children  |  自定义默认插槽内容  |
 

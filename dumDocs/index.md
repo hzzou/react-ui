@@ -1,10 +1,10 @@
 ---
 hero:
   title: ReactUI
-  description: 一个React hooks组件库
+  description: 一个基于React hooks的组件库
   actions:
     - text: 开始
-      link: /components/virtual-list
+      link: /components/button
     - text: GitHub
       link: /
 features:
