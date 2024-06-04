@@ -11,6 +11,7 @@ npm i hzlzh-react-ui
 - 文档命名和文档路由使用的是中划线而非驼峰
 - pnpm store prune是清除缓存
 - 本地私服发包时也会向npm网站查询包是否重名
+- assert静态资源路径需要放在src下
 
 ### 发包的地址与本地使用的registry相关
 

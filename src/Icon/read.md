@@ -8,4 +8,3 @@
   },
 * 可以定义在局部，也可以使用createGlobalStyle定义在全局, GlobalStyle也是一个组件,与StylesWrapper平级或者在全局
 * 使用jest测试时报错，但是在style-components里引入字体文件运行不报错
-* 可以直接引入在组件里面引入iconfont.css

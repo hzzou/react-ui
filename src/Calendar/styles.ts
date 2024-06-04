@@ -2,16 +2,19 @@ import styled from "styled-components";
 
 const StylesWrapper = styled.div`
     border: 1px solid #ddd;
+    width: 100%;
+    height: 100%;
     .calendar {
+        width: 100%;
+        height: 100%;
         flex: 1 1 500px;
         background: #fff;
         header {
-            height: 60px;
+            flex:1 1 60px;
             display: flex;
             justify-content: space-between;
             padding: 10px;
             box-sizing: border-box;
-
             .title {
                 font-size: 26px;
                 font-weight: 600;
@@ -31,22 +34,27 @@ const StylesWrapper = styled.div`
             flex-wrap: wrap;
             .header {
                 font-weight: 600;
+                border-bottom: 1px solid #ddd;
+                border-top: 1px solid #ddd;
+                padding: 10px 0;
             }
             .first{
                 width: calc(100% / 7);
                 text-align: center;
-                height: 80px;
-                line-height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 cursor: pointer;
+                padding: 10px 0;
             }
             .item {
                 width: calc(100% / 7);
                 text-align: center;
-                height: 80px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 cursor: pointer;
+                padding: 10px 0;
                 &:hover{
                     background: rgba(0, 0, 0, 0.1);
                     color: rgba(64, 158, 255, 1);
@@ -60,7 +68,6 @@ const StylesWrapper = styled.div`
                 font-weight: 600;
             }
         }
-
     }
 `;
 export default StylesWrapper;

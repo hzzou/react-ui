@@ -1,22 +1,22 @@
 import styled, {createGlobalStyle} from "styled-components";
 
-import woff2 from "../../assets/fonts/iconfont.woff2";
-import woff from "../../assets/fonts/iconfont.woff";
-import ttf from "../../assets/fonts/iconfont.ttf";
+import woff2 from "hzlzh-react-ui/assets/fonts/iconfont.woff2";
+import woff from "hzlzh-react-ui/assets/fonts/iconfont.woff";
+import ttf from "hzlzh-react-ui/assets/fonts/iconfont.ttf";
 
 // 需要先引入，再给url
-// const GlobalStyle = createGlobalStyle`
-//   @font-face {
-//     font-family: "iconfont";
-//     src: url(${woff2}) format('woff2'),
-//     url(${woff}) format('woff'),
-//     url(${ttf}) format('truetype');
-//   }
-// `;
+export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "iconfont";
+    src: url(${woff2}) format('woff2'),
+    url(${woff}) format('woff'),
+    url(${ttf}) format('truetype');
+  }
+`;
 
-// 此处没有使用，直接在index.tsx里面引入iconfont.css
+
 const StylesWrapper = styled.span`
-  /*.iconfont {
+  .iconfont {
     font-family: "iconfont" !important;
     font-size: 16px;
     font-style: normal;
@@ -742,6 +742,6 @@ const StylesWrapper = styled.span`
 
   .icon-top:before {
     content: "\\e6de";
-  }*/
+  }
 `;
 export {StylesWrapper};
