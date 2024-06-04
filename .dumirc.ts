@@ -31,6 +31,7 @@ export default defineConfig({
             { title: 'Icon字体图标', link: '/components/icon' },
             { title: 'Modal弹框', link: '/components/modal' },
             { title: 'Dialog弹框', link: '/components/dialog' },
+            { title: 'Calendar日历', link: '/components/calendar' },
           ],
         },
       ],

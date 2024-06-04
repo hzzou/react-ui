@@ -9,7 +9,7 @@
   "homepage": "https://hzzou.github.io/react-ui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hzzou/react-ui"
+    "url": "git+https://github.com/hzzou/react-ui.git"
   },
   "scripts": {
     "build": "father build",
@@ -80,5 +80,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "hzlzh"
+  "author": "hzlzh",
+  "dependencies": {
+    "lunar-typescript": "^1.7.5"
+  }
 }

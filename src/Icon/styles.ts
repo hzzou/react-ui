@@ -14,6 +14,7 @@ import ttf from "../../assets/fonts/iconfont.ttf";
 //   }
 // `;
 
+// 此处没有使用，直接在index.tsx里面引入iconfont.css
 const StylesWrapper = styled.span`
   /*.iconfont {
     font-family: "iconfont" !important;

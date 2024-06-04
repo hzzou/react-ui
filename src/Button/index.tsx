@@ -4,7 +4,7 @@ import {ButtonProps} from "hzlzh-react-ui/Button/interface";
 import Icon from "../Icon";
 
 
-const Button: React.FC<ButtonProps> = (props: ButtonProps)=>{
+const Button: React.FC<Partial<ButtonProps>> = (props: Partial<ButtonProps>)=>{
 
 	const  { type = "default", nativeType = "button", size = "medium",
 		iconName = "", loading = false, round = false, circle = false,
