@@ -6,7 +6,7 @@
   "type": "module",
   "module": "lib/esm/index.js",
   "typings": "lib/esm/index.d.ts",
-  "homepage": "https://hzzou.github.io/react-ui",
+  "homepage": "https://hzlzh.com.cn",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hzzou/react-ui.git"

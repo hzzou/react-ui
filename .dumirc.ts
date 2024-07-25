@@ -9,6 +9,13 @@ const gitPath = '/react-ui/';
 // base改为/, 因为github上pages上使用了个人自定义域名
 const baseUrl = '/';
 
+const footerHtml = `
+    <footer>
+        <p style="margin: 10px auto;">Copyright © 2019 HzlzH. All Rights Reserved</p>
+        <p style="margin: 10px auto;"><a style="color: #8a9099; text-decoration: none;" href="https://beian.miit.gov.cn/#/Integrated/index">蜀ICP备19018626号-1</a></p>
+        <p style="margin: 10px auto;"><a style="color: #8a9099; text-decoration: none;" href="https://beian.mps.gov.cn/#/query/webSearch">川公网安备 51019002002328号</a></p>
+    </footer>`;
+
 export default defineConfig({
   outputPath: 'docs',
   base: baseUrl,
@@ -39,6 +46,6 @@ export default defineConfig({
         },
       ],
     },
-    footer: 'Powered by hzlzh',
+    footer: footerHtml,
   },
 });
