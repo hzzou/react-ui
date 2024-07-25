@@ -4,7 +4,10 @@ import * as process from 'process';
 // 仓库地址
 const gitPath = '/react-ui/';
 
-const baseUrl = process.env.NODE_ENV === 'production' ? gitPath : '/';
+// const baseUrl = process.env.NODE_ENV === 'production' ? gitPath : '/';
+
+// base改为/, 因为github上pages上使用了个人自定义域名
+const baseUrl = '/';
 
 export default defineConfig({
   outputPath: 'docs',

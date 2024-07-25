@@ -11,7 +11,7 @@ const Calendar: React.FC<Partial<CalendarProps>> = (props: Partial<CalendarProps
 	const now = useRef(date);
 	// 获取本月有多少天的小技巧
 	const days = useRef(new Date(now.current.getFullYear(), now.current.getMonth()+1, 0).getDate()); // 获取本月有多少天
-	const [dateObj, setDateArr] = useState<DateTime[]>([]);
+	const [dateObj, setDateArr] = useState<DateTime[]>([]); // 设置阴历，农历的，以便在UI上渲染
 	const [firstDateDay, setFirstDateDay] = useState(
 		new Date(now.current.getFullYear(), now.current.getMonth(), 1).getDay()
 	); // 获取每个月的第一天是周几
