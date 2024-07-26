@@ -24,7 +24,7 @@ export default defineConfig({
     docDirs: ['dumDocs']
   },
   themeConfig: {
-    name: 'reactUI',
+    name: '前端OR钱端',
     nav: [
       { title: '介绍', link: '/' },
       { title: '组件', link: '/components/button' },
