@@ -19,6 +19,7 @@ const footerHtml = `
 export default defineConfig({
   outputPath: 'docs',
   base: baseUrl,
+  title: '前端OR钱端',
   publicPath: `${baseUrl}`,
   resolve: {
     docDirs: ['dumDocs']
