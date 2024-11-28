@@ -4,7 +4,7 @@
 
 npm i hzlzh-react-ui
 
-### 记录
+### 记录测试
 
 - father 负责组建库源码的构建，dumi 负责组件的开发和文档生成
 - 使用 npx create-dumi 进行选择性创建库还是其它内容
