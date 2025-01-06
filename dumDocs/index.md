@@ -6,7 +6,7 @@ hero:
     - text: 开始
       link: /components/button
     - text: GitHub
-      link: /
+      link: https://github.com/hzzou/react-ui
 features:
   - title: React Hooks组件库
     emoji: 💎
